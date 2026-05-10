@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术知识库 - 个人技能展示</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 粒子背景画布 -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- 网格背景 -->
+    <div class="cyber-grid"></div>
+    
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 顶部导航 -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 50 50" class="hexagon">
+                        <polygon points="25,2 47,14 47,36 25,48 3,36 3,14" 
+                                 fill="none" stroke="url(#logo-gradient)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#b44ad8;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1 class="logo-text">TECH<span>ARCHIVE</span></h1>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link active">首页</a>
+                <a href="#skills" class="nav-link">技能矩阵</a>
+                <a href="#" class="nav-link">关于我</a>
+            </nav>
+            <div class="status-bar">
+                <span class="status-dot"></span>
+                <span class="status-text">系统在线</span>
+            </div>
+        </header>
+
+        <!-- 英雄区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">👨‍💻 知识沉淀系统 v2.0</div>
+                <h2 class="hero-title">
+                    技术技能
+                    <span class="gradient-text">知识库</span>
+                </h2>
+                <p class="hero-description">
+                    记录工作中的技术积累与实践经验，持续学习，持续成长
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="24">0</span>
+                        <span class="stat-label">技术技能</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="156">0</span>
+                        <span class="stat-label">实践项目</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="892">0</span>
+                        <span class="stat-label">学习小时</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">⚛️</div>
+                    <div class="card-label">React</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-label">UI/UX</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-label">Performance</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能分类筛选 -->
+        <section class="filter-section" id="skills">
+            <h3 class="section-title">
+                <span class="title-icon">📊</span>
+                技能矩阵
+            </h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="btn-icon">🔮</span>
+                    全部技能
+                </button>
+                <button class="filter-btn" data-filter="frontend">
+                    <span class="btn-icon">🎨</span>
+                    前端开发
+                </button>
+                <button class="filter-btn" data-filter="backend">
+                    <span class="btn-icon">⚙️</span>
+                    后端技术
+                </button>
+                <button class="filter-btn" data-filter="devops">
+                    <span class="btn-icon">🚀</span>
+                    部署运维
+                </button>
+                <button class="filter-btn" data-filter="tools">
+                    <span class="btn-icon">🛠️</span>
+                    开发工具
+                </button>
+            </div>
+        </section>
+
+        <!-- 技能卡片网格 -->
+        <section class="skills-grid" id="skills-grid">
+            <!-- 卡片将通过JavaScript动态生成 -->
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-text">© 2026 TechArchive. 持续学习，持续进步。</p>
+                    <p class="footer-subtext">用技术创造价值，用知识赋能未来</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">GitHub</a>
+                    <a href="#" class="footer-link">博客</a>
+                    <a href="#" class="footer-link">联系方式</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 技能详情模态框 -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modal-icon"></div>
+                <h2 class="modal-title" id="modal-title"></h2>
+                <span class="modal-category" id="modal-category"></span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">📖 技能描述</h3>
+                    <p class="modal-description" id="modal-description"></p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">🎯 核心要点</h3>
+                    <ul class="modal-key-points" id="modal-key-points"></ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">💡 实践经验</h3>
+                    <p class="modal-experience" id="modal-experience"></p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">📊 熟练度</h3>
+                    <div class="proficiency-bar">
+                        <div class="proficiency-fill" id="modal-proficiency"></div>
+                    </div>
+                    <span class="proficiency-text" id="modal-proficiency-text"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
