@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贝伟平 - 资深前端工程师简历_v5</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+      background: #eef1f6;
+      color: #1e293b;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .page {
+      max-width: 920px;
+      margin: 28px auto;
+      background: #fff;
+      box-shadow: 0 8px 32px rgba(15, 52, 96, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(120deg, #0f172a 0%, #1e3a5f 55%, #0f3460 100%);
+      color: #fff;
+      padding: 34px 44px 28px;
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 22px;
+    }
+    .avatar {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e94560, #3b82f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 700;
+      flex-shrink: 0;
+      border: 3px solid rgba(255,255,255,0.2);
+      letter-spacing: 2px;
+    }
+    .header-info h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .title-tag {
+      display: inline-block;
+      background: rgba(233, 69, 96, 0.9);
+      font-size: 12px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+    }
+    .header-meta a { color: inherit; text-decoration: none; }
+    .header-meta a:hover { color: #fda4af; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .metric-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .metric-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fda4af;
+      line-height: 1.2;
+    }
+    .metric-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.72);
+      margin-top: 4px;
+    }
+
+    .content { padding: 0 44px 36px; }
+
+    .section { margin-top: 26px; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f3460;
+      padding-bottom: 7px;
+      border-bottom: 2px solid #e94560;
+      margin-bottom: 14px;
+    }
+    .section-title .dot {
+      width: 6px;
+      height: 6px;
+      background: #e94560;
+      border-radius: 50%;
+    }
+
+    .summary-box {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 14px 18px;
+      border-left: 4px solid #0f3460;
+      color: #475569;
+      font-size: 13.5px;
+      line-height: 1.85;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .pillar {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .pillar h4 {
+      font-size: 13px;
+      color: #0f3460;
+      margin-bottom: 4px;
+    }
+    .pillar p {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+    .tag {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 3px 11px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .tag.hl { background: #0f3460; color: #fff; border-color: #0f3460; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .skill-item {
+      background: #f8fafc;
+      border-radius: 6px;
+      padding: 10px 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .skill-item .name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .skill-item .name span { color: #e94560; font-size: 11px; }
+    .skill-bar {
+      height: 5px;
+      background: #e2e8f0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #e94560, #0f3460);
+      border-radius: 3px;
+    }
+
+    .exp-item {
+      border-left: 3px solid #e94560;
+      padding-left: 16px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #e94560;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #e94560;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+    .exp-company { font-size: 15px; font-weight: 700; color: #0f172a; }
+    .exp-date {
+      font-size: 12px;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+    .exp-position { color: #e94560; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .exp-desc { color: #475569; font-size: 13px; }
+    .exp-desc ul { padding-left: 16px; }
+    .exp-desc li { margin-bottom: 4px; }
+    .exp-desc strong { color: #1e293b; font-weight: 600; }
+
+    .project-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border-left: 4px solid #0f3460;
+    }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .project-name { font-size: 14px; font-weight: 700; color: #0f172a; }
+    .project-role {
+      background: #0f3460;
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+    .project-desc { color: #475569; font-size: 13px; line-height: 1.7; }
+    .project-result {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #0f3460;
+      font-weight: 600;
+    }
+    .project-tech { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .tech-tag {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      background: #f8fafc;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+    .edu-left .school { font-weight: 700; font-size: 14px; }
+    .edu-left .major { color: #64748b; font-size: 13px; margin-top: 2px; }
+    .edu-right { text-align: right; color: #64748b; font-size: 12px; }
+    .edu-right .degree { color: #0f3460; font-weight: 600; font-size: 13px; }
+
+    .achievement-list { list-style: none; }
+    .achievement-list li {
+      padding: 8px 12px;
+      margin-bottom: 7px;
+      background: #f8fafc;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #475569;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .achievement-list li::before {
+      content: '▸';
+      color: #e94560;
+      flex-shrink: 0;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; margin: 0; border-radius: 0; max-width: 100%; }
+      .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .metric-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    @media (max-width: 720px) {
+      .header, .content { padding-left: 20px; padding-right: 20px; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .pillars, .skills-grid { grid-template-columns: 1fr; }
+      .header-top { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="avatar">贝</div>
+      <div class="header-info">
+        <h1>贝伟平</h1>
+        <span class="title-tag">资深前端工程师 · 小程序性能</span>
+        <div class="header-meta">
+          <span>13510567070</span>
+          <span><a href="mailto:1002287420@qq.com">1002287420@qq.com</a></span>
+          <span>本科 · 玉林师范学院</span>
+          <span>深圳</span>
+          <span>10+年 前端经验</span>
+        </div>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-value">1年+</div>
+        <div class="metric-label">Java开发经验</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">10年+</div>
+        <div class="metric-label">前端开发经验</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">3.57M→1.87M</div>
+        <div class="metric-label">小程序主包体积优化</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">10+</div>
+        <div class="metric-label">团队 Cursor Skills</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">7年+</div>
+        <div class="metric-label">云集电商核心业务</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-title"><span class="dot"></span>个人评价</div>
+      <div class="summary-box">
+        深耕微信小程序电商与 H5 移动端，具备从业务重构到性能专项的完整落地能力。擅长基于微信性能平台数据推动可量化优化（包体积、启动耗时、setData 卡顿），并能独立完成技术调研与第三方能力接入（云直播 LiveRoomPlugin、微信 JS-SDK）。<strong>AI Agent 工程化</strong>，在团队内建设 Cursor Skills 体系（Git 提交流程、Code Review、业务 FAQ 智能体等），个人侧深度实践 Claude Code / Cursor、MCP 接入与 Hooks 自动化护栏。注重方案可复用与团队协同，有前端组长经验，习惯通过文档沉淀方法论。
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot"></span>核心能力</div>
+      <div class="pillars">
+        <div class="pillar">
+          <h4>电商核心业务</h4>
+          <p>商品详情 / 购物车 / 下单结算链路多轮重构，SKU 组件与异步加载策略优化，支撑高频交易场景稳定迭代。</p>
+        </div>
+        <div class="pillar">
+          <h4>小程序工程化治理</h4>
+          <p>综合评估提升专项：主包 3.57M→1.87M、总包 8.42M→5.28M；按需注入、插件/废弃页 5S 清理、跨分包异步加载与 setData 聚合，启动与运行性能持续治理。</p>
+        </div>
+        <div class="pillar">
+          <h4>AI Agent 工程化</h4>
+          <p>团队 yj-skills 单体仓库（10+ Skills、50+ 脚本）：FQA 满减/多折智能体、smart-commit 提交审查链、Wiki 离线同步；个人实践 MCP（Gitee/GitHub）、 Skill 工作流。</p>
+        </div>
+        <div class="pillar">
+          <h4>工程化与质量保障</h4>
+          <p>去 Node-Sass 化、Less 统一迁移；错误收集上报(飞书监控提醒)；发布脚本与团队编码规范推行。</p>
+        </div>
+        <div class="pillar">
+          <h4>跨端与平台能力</h4>
+          <p>微信 H5 / 小程序 / App 场景跳转封装；腾讯云 IM+直播接入；iOS 微信 JS-SDK 签名疑难问题攻坚。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot"></span>技术技能</div>
+      <div class="skill-tags">
+        <span class="tag hl">Vue</span>
+        <span class="tag hl">微信小程序</span>
+        <span class="tag hl">TypeScript</span>
+        <span class="tag hl">性能优化</span>
+        <span class="tag hl">Cursor / Claude Code</span>
+        <span class="tag hl">AI Agent Skills</span>
+        <span class="tag hl">腾讯云 IM / 直播</span>
+        <span class="tag">MCP</span>
+        <span class="tag">Vuex / Pinia</span>
+        <span class="tag">Vue Router</span>
+        <span class="tag">Webpack / Vite</span>
+        <span class="tag">Less / SCSS</span>
+        <span class="tag">微信 JS-SDK</span>
+        <span class="tag">Lottie 动画</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">React / Angular</span>
+        <span class="tag">数据埋点 / SQL</span>
+        <span class="tag">Git / Linux</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="name"><span>Vue / 微信小程序</span><span>精通</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="name"><span>HTML5 / CSS3 / 移动端</span><span>精通</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:93%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="name"><span>TypeScript / JavaScript</span><span>熟练</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="name"><span>性能优化 / 工程化</span><span>熟练</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:86%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="name"><span>AI Agent / Cursor Skills</span><span>熟练</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:84%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="name"><span>微信 H5 / JS-SDK</span><span>熟练</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="name"><span>React / Node.js</span><span>熟练</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot"></span>工作经历</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">云集（yunjiglobal）</div>
+          <div class="exp-date">2018.07 — 2026.05</div>
+        </div>
+        <div class="exp-position">高级前端工程师</div>
+        <div class="exp-desc">
+          <ul>
+            <li>负责微信小程序商城<strong>下单链路、购物车、商品详情</strong>等核心模块开发与多轮重构，持续优化渲染与交互体验。</li>
+            <li>主导<strong>《小程序综合评估提升》</strong>专项：基于微信性能平台报告分三期推进——一期主包 3.57M→2.28M、总包 8.42M→5M（lazyCodeLoading、插件瘦身、5S 废弃页清理）；二期「4 个 100」+跨分包异步加载，总启动耗时 2382ms→2167ms、「我的」页切换 450ms→202ms；三期商详重构后主包 2.46M→1.87M，代码下载 415ms（快于同类 87ms），商详加载慢占比 57.66%→23.00%、整体加载慢占比 35.59%→20.06%。</li>
+            <li>推动<strong>去 Node-Sass 化</strong>专项，完成 yjtrade、yjbuyer-ssr、yjcommodity、vue-buyer 等 多 个核心项目 Less 迁移，解决多 Node 版本编译与 CI 不稳定问题。</li>
+            <li>主导供应商门户<strong>Vue 全家桶前后端分离</strong>迁移（Vue + Vuex + Vue Router + Axios），统一组件化与状态管理规范。</li>
+            <li>完成<strong>云直播</strong>技术调研与落地（腾讯云 IM + 直播 SDK LiveRoomPlugin），打通互动消息与直播播放闭环。</li>
+            <li>参与大项目保障体系建设：统一跳转、图片组件化、接口缓存、错误收集上报(飞书监控提醒)。</li>
+            <li>配合数据分析（SQL + ThinkingData 埋点），用转化指标驱动功能迭代；攻坚 iOS 微信 H5 <strong>js-sdk invalid signature</strong> 等疑难问题。</li>
+            <li>参与团队 <strong>yj-skills</strong> Cursor Skills 体系建设：维护 10+ 可分发 Skill（smart-commit 语义化提交 + 链式 Code Review、FQA 满减/多折后台智能体、Confluence Wiki 离线同步、H5 项目脚手架等），通过 update-yjskill 一键同步至全员 Agent 环境。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">AI Agent 工程化实践（个人）</div>
+          <div class="exp-date">2025.03 — 至今</div>
+        </div>
+        <div class="exp-position">Cursor / Claude Code 工作流建设</div>
+        <div class="exp-desc">
+          <ul>
+            <li>搭建 <strong>beBestNote</strong> 知识库，沉淀 Skill vs Subagent 选型、oh-my-claudecode、Cursor Superpowers 13 项开发工作流及安装排错 SOP。</li>
+            <li>掌握 Claude Code 工具链（Slash Commands / Skills / Subagents / MCP / Hooks），能组合代码审查、TDD、计划执行、并行 Agent 等标准化 AI 辅助开发流程。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">深圳友门鹿网络科技有限公司</div>
+          <div class="exp-date">2015.01 — 2018.06</div>
+        </div>
+        <div class="exp-position">前端开发组组长</div>
+        <div class="exp-desc">
+          <ul>
+            <li>带领团队维护官网 H5、微信商城（Angular + Sui）、学习平台及运营活动页，负责进销存 / 物业 / 商城后台等多系统前端交付。</li>
+            <li>推动代码规范与 SVN/Git 工程化实践；业余时间自研 MEAN 栈接口管理平台，提升全研发联调效率。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">深圳市华信科技有限公司</div>
+          <div class="exp-date">2014.07 — 2014.12</div>
+        </div>
+        <div class="exp-position">Java Web 前端开发（实习）</div>
+        <div class="exp-desc">
+          <ul>
+            <li>微信公众平台项目开发，独立完成自定义菜单管理与微信商城购物车 / 订单模块。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot"></span>重点项目</div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">yj-skills · 团队 Cursor Skills 体系</div>
+          <div class="project-role">核心贡献</div>
+        </div>
+        <div class="project-desc">
+          云集前端团队 Skills 单体仓库（GitLab fe/yj-skills）：10+ Skill 目录、50+ 脚本。涵盖 skill-creator 创建规范、update-yjskill 团队分发、smart-commit 跨平台 Git 工作流（提交后链式触发 reviewer）、to-my-project 三阶段合规迁移门禁。
+        </div>
+        <div class="project-result">成果：将重复性 Git/Review/FAQ/Wiki 操作 Agent 化，NL→CLI 映射 + 输出契约降低测试/开发手工后台操作</div>
+        <div class="project-tech">
+          <span class="tech-tag">Cursor Skills</span>
+          <span class="tech-tag">Python / Bash</span>
+          <span class="tech-tag">Agent 工作流</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">FQA · 电商后台业务智能体</div>
+          <div class="project-role">个人实践</div>
+        </div>
+        <div class="project-desc">
+          分层设计：SSO 鉴权 + Session 缓存 → 根 Skill 路由 → 满减/多折子模块。自然语言映射 CLI 参数，Agent 友好 Markdown 输出（定界符 + 落盘），支持对话式查询/创建营销后台活动。
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Cursor Agent</span>
+          <span class="tech-tag">NL→CLI</span>
+          <span class="tech-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">Claude Code · 多 Agent 协作实践</div>
+          <div class="project-role">个人实践</div>
+        </div>
+        <div class="project-desc">
+          集成 MCP（Gitee/GitHub）、Hooks 安全链（PreToolUse 拦截 rm -rf、PostToolUse 变更日志），沉淀 beBestNote 选型与排错文档。
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Claude Code</span>
+          <span class="tech-tag">MCP</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Hooks</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">微信小程序 · 综合评估提升专项</div>
+          <div class="project-role">专项负责人</div>
+        </div>
+        <div class="project-desc">
+          针对启动性能造成的用户流失，建立性能数据对照与 5S 废弃页治理机制；推进主包迁出、按需注入、无用插件/组件清理、Mall 分包精简（1.78M→1.30M）及商详 setData 分批聚合重构（Page + behavior 分层）。
+        </div>
+        <div class="project-result">成果：主包 3.57M→1.87M，总包 8.42M→5.28M；总启动耗时降 215ms，Mall 分包减 0.48M；商详卡顿率 43.76%→33.76%，页面切换耗时降 82ms</div>
+        <div class="project-tech">
+          <span class="tech-tag">微信小程序</span>
+          <span class="tech-tag">分包治理</span>
+          <span class="tech-tag">性能优化</span>
+          <span class="tech-tag">体验分析</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">供应商门户 · Vue 全家桶迁移</div>
+          <div class="project-role">主导重构</div>
+        </div>
+        <div class="project-desc">
+          将旧版供应商门户迁移至 Vue + Vuex + Vue Router + Axios 前后端分离架构，统一页面组件化、接口层与状态管理，降低维护成本。
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Vue 2</span>
+          <span class="tech-tag">Vuex</span>
+          <span class="tech-tag">Axios</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">小程序云直播能力集成</div>
+          <div class="project-role">技术负责人</div>
+        </div>
+        <div class="project-desc">
+          调研并接入腾讯云 IM + 直播 SDK（live-room-plugin / TUI），实现直播流播放、互动消息等完整业务闭环。
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">腾讯云 IM</span>
+          <span class="tech-tag">直播 SDK</span>
+          <span class="tech-tag">WebSocket</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">iOS 微信 H5 · JS-SDK 签名修复</div>
+          <div class="project-role">疑难攻坚</div>
+        </div>
+        <div class="project-desc">
+          解决 SPA 路由跳转后 iOS 微信内置浏览器出现的 invalid signature 问题，梳理入口 URL、config 调用时序与后端签名策略，恢复分享 / 支付等能力稳定性。
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">微信 JS-SDK</span>
+          <span class="tech-tag">Vue Router</span>
+          <span class="tech-tag">H5</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">CSS 工程化 · 去 Node-Sass 化</div>
+          <div class="project-role">方案设计 & 落地</div>
+        </div>
+        <div class="project-desc">
+          针对 node-sass 依赖 Python 2.x / node-gyp 导致的环境漂移，制定 4 项目统一迁移 Less 方案，显著提升 CI/CD 构建成功率。
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Less</span>
+          <span class="tech-tag">Vue CLI</span>
+          <span class="tech-tag">工程化</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-name">接口管理平台（自研）</div>
+          <div class="project-role">独立开发</div>
+        </div>
+        <div class="project-desc">
+          业余时间独立完成 MEAN 栈接口管理平台，在线演示：https://inf.apisuper.com/
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Express</span>
+          <span class="tech-tag">Angular</span>
+          <span class="tech-tag">Node.js</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot"></span>教育经历</div>
+      <div class="edu-item">
+        <div class="edu-left">
+          <div class="school">玉林师范学院</div>
+          <div class="major">信息与计算科学 · 本科</div>
+        </div>
+        <div class="edu-right">
+          <div class="degree">理学学士</div>
+          <div>广西 · 玉林</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="dot"></span>其他亮点</div>
+      <ul class="achievement-list">
+        <li>习惯持续输出微信小程序、Vue、AI Agent 等实战经验。</li>
+        <li>熟悉数据埋点体系，具备 SQL 基础，能用 ThinkingData 等指标驱动迭代决策。</li>
+        <li>熟悉 Linux 基本运维与发布流程，具备跨端协作与 DevOps 意识。</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
