@@ -74,26 +74,29 @@
 
     .metrics {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
     }
     .metric-card {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 8px;
-      padding: 10px 12px;
+      padding: 10px 8px;
       text-align: center;
+      min-width: 0;
     }
     .metric-value {
       font-size: 18px;
       font-weight: 700;
       color: #fda4af;
       line-height: 1.2;
+      white-space: nowrap;
     }
     .metric-label {
       font-size: 11px;
       color: rgba(255,255,255,0.72);
       margin-top: 4px;
+      line-height: 1.3;
     }
 
     .content { padding: 0 44px 36px; }
@@ -306,11 +309,20 @@
 
     @media print {
       body { background: #fff; }
-      .page { box-shadow: none; margin: 0; border-radius: 0; max-width: 100%; }
-      .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { box-shadow: none; margin: 0; border-radius: 0; max-width: 100%; width: 100%; }
+      .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 28px 36px 22px; }
       .metric-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .metrics {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .metric-value { font-size: 15px; }
+      .metric-label { font-size: 10px; }
+      .pillars { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: repeat(3, 1fr); }
+      .header-top { flex-direction: row; align-items: center; }
     }
-    @media (max-width: 720px) {
+    @media screen and (max-width: 720px) {
       .header, .content { padding-left: 20px; padding-right: 20px; }
       .metrics { grid-template-columns: repeat(2, 1fr); }
       .pillars, .skills-grid { grid-template-columns: 1fr; }
@@ -332,7 +344,6 @@
           <span><a href="mailto:1002287420@qq.com">1002287420@qq.com</a></span>
           <span>本科 · 玉林师范学院</span>
           <span>深圳</span>
-          <span>10+年 前端经验</span>
         </div>
       </div>
     </div>
@@ -340,10 +351,6 @@
       <div class="metric-card">
         <div class="metric-value">1年+</div>
         <div class="metric-label">Java开发经验</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">10年+</div>
-        <div class="metric-label">前端开发经验</div>
       </div>
       <div class="metric-card">
         <div class="metric-value">3.57M→1.87M</div>
@@ -457,7 +464,7 @@
           <div class="exp-company">云集（yunjiglobal）</div>
           <div class="exp-date">2018.07 — 2026.05</div>
         </div>
-        <div class="exp-position">高级前端工程师</div>
+        <div class="exp-position">资深前端工程师</div>
         <div class="exp-desc">
           <ul>
             <li>负责微信小程序商城<strong>下单链路、购物车、商品详情</strong>等核心模块开发与多轮重构，持续优化渲染与交互体验。</li>
